@@ -1,13 +1,28 @@
-<%- include("layout.ejs") %>
+<%- include("header.ejs") %>
 
-<h1>All Blog Posts</h1>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to My Blog</h1>
+        <p>Share your thoughts and ideas with the world.</p>
+        <a href="/new" class="btn">Create New Post</a>
+    </div>
+</section>
 
-<% if (posts.length === 0) { %>
-    <p>No posts yet. <a href="/new">Create one</a>!</p>
-<% } else { %>
-    <% for (let i = 0; i < posts.length; i++) { %>
-        <p><%= posts[i].title %> - <%= posts[i].content %></p>
-    <% } %>
-<% } %>
+<section class="posts">
+    <div class="container">
+        <h2>Recent Posts</h2>
 
-<a href="/new">Create New Post</a>
+        <% if (posts.length === 0) { %>
+            <p class="no-posts">No posts yet. Start by creating one!</p>
+        <% } else { %>
+            <% posts.forEach((post) => { %>
+                <div class="post">
+                    <h3><%= post.title %></h3>
+                    <p><%= post.content %></p>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</section>
+
+<%- include("footer.ejs") %>
