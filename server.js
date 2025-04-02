@@ -19,9 +19,41 @@ app.get("/new", (req, res) => {
   res.render("new");
 });
 
+app.get("/edit/:id", (req, res) => {
+  const postId = Number(req.params.id);
+  const post = posts.find((p) => p.id === postId);
+
+  if (!post) {
+    return res.status(404).send("Post not found");
+  }
+
+  res.render("edit", { post });
+});
+
+app.post("/edit/:id",(req,res)=>{
+  const postId=Number(req.params.id);
+  const postIndex = posts.findIndex((p) => p.id === postId);
+  if (postIndex === -1) {
+    return res.status(404).send("Post not found");
+  }
+
+  posts[postIndex].title = title;
+  posts[postIndex].content = content;
+
+  res.redirect("/");
+});
+
+
+
+
 app.post("/new", (req, res) => {
   const { title, content } = req.body;
-  posts.push({ title, content });  // Add post to array
+  const newPost = {
+    id: Date.now(),  
+    title,
+    content
+  };
+  posts.push(newPost);  
   res.redirect("/");
 });
 

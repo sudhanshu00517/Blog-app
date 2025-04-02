@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
 <%- include("header.ejs") %>
 
 <section class="hero">
@@ -19,6 +23,8 @@
                 <div class="post">
                     <h3><%= post.title %></h3>
                     <p><%= post.content %></p>
+                    <a href="/edit/<%= post.id %>" class="edit-button">Edit</a>
+
                 </div>
             <% }) %>
         <% } %>
