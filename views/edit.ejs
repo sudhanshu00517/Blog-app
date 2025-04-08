@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+  <%- include("header") %>
+
+<div class="form-container">
+  <h2>Edit Your Blog Post</h2>
+
+  <form method="POST" action="/edit/<%= post.id %>">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="<%= post.title %>"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="content">Content:</label>
+      <textarea
+        id="content"
+        name="content"
+        rows="8"
+        required
+      ><%= post.content %></textarea>
+    </div>
+
+    <button type="submit" class="btn">Update Post</button>
+  </form>
+</div>
+
+<%- include("footer") %>
+
+</body>
+</html>

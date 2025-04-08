@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let posts = [];  // Store posts temporarily
+let posts = []; 
 
 app.get("/", (req, res) => {
   res.render("index", { posts });
@@ -37,6 +37,7 @@ app.post("/edit/:id",(req,res)=>{
     return res.status(404).send("Post not found");
   }
 
+  const { title, content } = req.body;
   posts[postIndex].title = title;
   posts[postIndex].content = content;
 
