@@ -58,6 +58,16 @@ app.post("/new", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/delete/:id", function(req, res) {
+  const deleteId = req.params.id;
+  posts = posts.filter(post => post.id != deleteId);
+  res.redirect("/");
+});
+
+
+
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
