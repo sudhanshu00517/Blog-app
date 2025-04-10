@@ -59,3 +59,10 @@ h1 {
     width: 30px;
     height: 30px;
 }
+
+#blog{
+    color: white;
+}
+a{
+    text-decoration: none;
+}
