@@ -1,70 +1,70 @@
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
-  }
-  
-  h1, h2 {
-    color: #343a40;
-  }
-  
-  .card {
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-  
-  .btn {
-    text-decoration: none;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-  }
-  
-  .btn-create {
-    background-color: #007bff;
-    color: white;
-    margin-bottom: 20px;
-    display: inline-block;
-  }
-  
-  .btn-create:hover {
-    background-color: #0069d9;
-  }
-  
-  .btn-edit {
-    background-color: #ffc107;
-    color: black;
-    margin-right: 10px;
-  }
-  
-  .btn-edit:hover {
-    background-color: #e0a800;
-  }
-  
-  .btn-delete {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .btn-delete:hover {
-    background-color: #c82333;
-  }
-  
-  .no-posts {
-    color: #6c757d;
-    font-style: italic;
-  }
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+h1, h2 {
+  color: #343a40;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-create {
+  background-color: #007bff;
+  color: white;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.btn-create:hover {
+  background-color: #0069d9;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: black;
+  margin-right: 10px;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.no-posts {
+  color: #6c757d;
+  font-style: italic;
+}
