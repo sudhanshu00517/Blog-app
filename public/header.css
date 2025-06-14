@@ -1,68 +1,269 @@
-body {
+/* Header CSS - Improved Navigation with Clear Visibility */
+
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
+/* Main header container */
 header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1b1e3f;
-    color: white;
-    padding: 15px 30px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Left section container */
+.left {
+    flex: 1;
+    padding-left: 20px;
 }
 
 .main {
     display: flex;
     align-items: center;
+    gap: 40px;
 }
 
-h1 {
+/* Logo/Brand styling */
+#blog {
+    font-size: 2rem;
+    font-weight: 700;
+    color: grey;
     margin: 0;
-    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
+.left .main a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.left .main a:hover #blog {
+    color: #f39c12;
+    transform: scale(1.05);
+}
+
+/* Left navigation menu */
 .left-options {
-    list-style: none;
     display: flex;
-    margin-left: 20px;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
     padding: 0;
 }
 
 .left-options li {
-    margin-left: 15px;
-    padding: 8px 12px;
-    border: 1px solid white;
-    border-radius: 5px;
+    margin: 0;
 }
 
-.left-options li a {
-    text-decoration: none;
+.left-options a {
+    display: inline-block;
+    padding: 6px 14px;
     color: white;
-    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.left-options a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    color: #f8f9fa;
+}
+
+.left-options a:active {
+    transform: translateY(0);
+}
+
+/* Special styling for different nav items */
+.left-options li:nth-child(1) a:hover {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: #2ecc71;
+}
+
+.left-options li:nth-child(2) a:hover {
+    background: rgba(52, 152, 219, 0.3);
+    border-color: #3498db;
+}
+
+.left-options li:nth-child(3) a:hover {
+    background: rgba(230, 126, 34, 0.3);
+    border-color: #e67e22;
+}
+
+.left-options li:nth-child(4) a:hover {
+    background: rgba(231, 76, 60, 0.3);
+    border-color: #e74c3c;
+}
+
+/* Right section container */
+.right {
+    padding-right: 20px;
 }
 
 .right ul {
-    list-style: none;
     display: flex;
+    list-style: none;
+    gap: 15px;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
-.right ul li {
-    margin-left: 15px;
+.right li {
+    margin: 0;
 }
 
-.right ul li a img {
-    width: 30px;
-    height: 30px;
+/* Social media links */
+.right a {
+    display: inline-block;
+    padding: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-#blog{
-    color: white;
+.right a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-a{
-    text-decoration: none;
+
+/* Social media images */
+.right img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* GitHub icon - keep white */
+.right a[href*="github"] img {
+    filter: brightness(0) invert(1);
+}
+
+.right a[href*="github"]:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* LinkedIn icon - use original colors */
+.right a[href*="linkedin"] img {
+    filter: none;
+}
+
+.right a[href*="linkedin"]:hover img {
+    filter: brightness(1.1) saturate(1.2);
+}
+
+/* GitHub specific hover */
+.right a[href*="github"]:hover {
+    background: rgba(36, 41, 46, 0.7);
+    border-color: #24292e;
+}
+
+/* LinkedIn specific hover */
+.right a[href*="linkedin"]:hover {
+    background: rgba(0, 119, 181, 0.2);
+    border-color: #0077b5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+        gap: 15px;
+    }
+    
+    .left {
+        padding-left: 10px;
+        width: 100%;
+    }
+    
+    .main {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .left-options {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .left-options a {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .right {
+        padding-right: 10px;
+    }
+    
+    #blog {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        gap: 10px;
+    }
+    
+    .left-options {
+        gap: 8px;
+    }
+    
+    .left-options a {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .right img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    #blog {
+        font-size: 1.6rem;
+    }
+}
+
+/* Animation for header on page load */
+header {
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
