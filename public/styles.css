@@ -151,18 +151,19 @@ li p {
 }
 
 li small {
-  color: #718096;
-  font-weight: 500;
-  font-size: 0.9rem;
+  color: #a78bfa;
+  font-weight: 600;
+  font-size: 1.3rem;
   display: block;
   margin-bottom: 1rem;
+  letter-spacing: 0.5px;
 }
 
 button {
   background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.9rem;
@@ -271,7 +272,6 @@ button[type="submit"]:hover {
   box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
 }
 
-/* Empty state styling */
 p {
   text-align: center;
   color: #718096;
@@ -283,7 +283,6 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .container {
     margin: 1rem;
@@ -304,7 +303,6 @@ p {
   }
 }
 
-/* Micro-interactions */
 @media (prefers-reduced-motion: no-preference) {
   .container {
     animation: float 6s ease-in-out infinite;
@@ -320,7 +318,6 @@ p {
   }
 }
 
-/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   body {
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
@@ -352,4 +349,27 @@ p {
     background: #2d3748;
     border-color: #667eea;
   }
+}
+
+.custom-edit-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.custom-edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
 }

@@ -52,6 +52,7 @@ app.post("/add", async (req, res) => {
 
 app.get("/edit/:id", async (req, res) => {
   const id = req.params.id;
+  console.log(id);
   try {
     const result = await db.query("SELECT * FROM posts WHERE id = $1", [id]);
     if (result.rows.length === 0) return res.status(404).send("Post not found");
@@ -75,15 +76,7 @@ app.post("/edit/:id", async (req, res) => {
   }
 });
 
-app.post("/delete/:id", async (req, res) => {
-  const id = req.params.id;
-  try {
-    await db.query("DELETE FROM posts WHERE id = $1", [id]);
-    res.redirect("/");
-  } catch {
-    res.status(500).send("Server error");
-  }
-});
+
 
 
 app.post("/delete/:id", async (req, res) => {
