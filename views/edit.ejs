@@ -15,7 +15,7 @@
   <textarea name="content" rows="10" cols="50" required><%= post.content %></textarea><br/><br/>
   
   <label>Author:</label><br/>
-  <input type="text" name="author" value="<%= post.author %>" /><br/><br/>
+  <input type="text" name="author" value="<%= post.author || '' %>" /><br/><br/>
   
   <button type="submit">Update Post</button>
 </form>

@@ -1,1 +1,69 @@
+# Node.js dependencies
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# dotenv environment files
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Build files (for frontend or transpilation)
+dist/
+build/
+out/
+coverage/
+
+# Babel / TypeScript / Webpack cache
+.cache/
+.next/
+.nyc_output/
+*.tsbuildinfo
+
+# PostgreSQL local data (optional if you use local dumps/backups)
+*.sql
+*.dump
+
+# Compiled binaries or temporary files
+*.exe
+*.out
+*.class
+*.pyc
+*.pyo
+*.pyd
+
+# Test files or snapshots (optional)
+__snapshots__/
+*.spec.js
+*.test.js
+
+# OS temp files
+*.tmp
+*.bak
+*.swp
+
+# macOS specific
+.AppleDouble
+.LSOverride
+Icon?
+
+# Linux specific
+*~
