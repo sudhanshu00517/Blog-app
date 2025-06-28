@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/register.css">
+    <link rel="stylesheet" href="/reg.css">
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/footer.css">
     <title>Sign Up - Blogger</title>
@@ -14,19 +14,6 @@
             <p>Join our blogging community</p>
         </div>
 
-        <!-- Google Registration Button -->
-        <div class="google-register">
-            <a href="/auth/google" class="google-btn">
-                <img src="/google-icon.svg" alt="Google" class="google-icon">
-                <span>Sign up with Google</span>
-            </a>
-        </div>
-
-        <div class="divider">
-            <span>or</span>
-        </div>
-
-        <!-- Local Registration Form -->
         <form action="/register" method="POST" class="register-form">
             <% if (typeof error !== 'undefined' && error) { %>
                 <div class="error-message">
@@ -39,45 +26,6 @@
                     <%= success %>
                 </div>
             <% } %>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input 
-                        type="text" 
-                        id="firstName" 
-                        name="firstName" 
-                        placeholder="Enter your first name"
-                        value="<%= typeof firstName !== 'undefined' ? firstName : '' %>"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input 
-                        type="text" 
-                        id="lastName" 
-                        name="lastName" 
-                        placeholder="Enter your last name"
-                        value="<%= typeof lastName !== 'undefined' ? lastName : '' %>"
-                        required
-                    >
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input 
-                    type="text" 
-                    id="username" 
-                    name="username" 
-                    placeholder="Choose a username"
-                    value="<%= typeof username !== 'undefined' ? username : '' %>"
-                    required
-                >
-                <small class="form-hint">This will be your unique identifier</small>
-            </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
@@ -100,12 +48,6 @@
                     placeholder="Create a password"
                     required
                 >
-                <div class="password-strength">
-                    <div class="strength-bar">
-                        <div class="strength-fill"></div>
-                    </div>
-                    <small class="strength-text">Password strength: <span id="strength-level">Weak</span></small>
-                </div>
             </div>
 
             <div class="form-group">
@@ -117,32 +59,6 @@
                     placeholder="Confirm your password"
                     required
                 >
-            </div>
-
-            <div class="form-group">
-                <label for="bio">Bio (Optional)</label>
-                <textarea 
-                    id="bio" 
-                    name="bio" 
-                    placeholder="Tell us a bit about yourself..."
-                    rows="3"
-                ><%= typeof bio !== 'undefined' ? bio : '' %></textarea>
-            </div>
-
-            <div class="form-checkbox">
-                <label class="checkbox-container">
-                    <input type="checkbox" name="agreeTerms" required>
-                    <span class="checkmark"></span>
-                    I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>
-                </label>
-            </div>
-
-            <div class="form-checkbox">
-                <label class="checkbox-container">
-                    <input type="checkbox" name="newsletter">
-                    <span class="checkmark"></span>
-                    Subscribe to our newsletter for updates and tips
-                </label>
             </div>
 
             <button type="submit" class="register-btn">
@@ -157,43 +73,7 @@
 </div>
 
 <script>
-    // Password strength checker
-    document.getElementById('password').addEventListener('input', function() {
-        const password = this.value;
-        const strengthBar = document.querySelector('.strength-fill');
-        const strengthText = document.getElementById('strength-level');
-        
-        let strength = 0;
-        let strengthLevel = 'Weak';
-        let color = '#ff4444';
-        
-        // Check password criteria
-        if (password.length >= 8) strength++;
-        if (/[a-z]/.test(password)) strength++;
-        if (/[A-Z]/.test(password)) strength++;
-        if (/[0-9]/.test(password)) strength++;
-        if (/[^A-Za-z0-9]/.test(password)) strength++;
-        
-        // Determine strength level
-        if (strength >= 4) {
-            strengthLevel = 'Strong';
-            color = '#44ff44';
-        } else if (strength >= 3) {
-            strengthLevel = 'Medium';
-            color = '#ffaa44';
-        } else if (strength >= 2) {
-            strengthLevel = 'Fair';
-            color = '#ffdd44';
-        }
-        
-        // Update UI
-        strengthBar.style.width = (strength * 20) + '%';
-        strengthBar.style.backgroundColor = color;
-        strengthText.textContent = strengthLevel;
-        strengthText.style.color = color;
-    });
-    
-    // Confirm password validation
+
     document.getElementById('confirmPassword').addEventListener('input', function() {
         const password = document.getElementById('password').value;
         const confirmPassword = this.value;
