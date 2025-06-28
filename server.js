@@ -115,7 +115,12 @@ app.post("/register", async (req, res) => {
     }
     const hashed = await bcrypt.hash(password, saltRounds);
     await db.query("INSERT INTO users (email, password) VALUES ($1, $2)", [email, hashed]);
-    res.render("register", { error: null, success: "Account created!", email: "" });
+      const newUser = newUserResult.rows[0];
+
+    req.login(newUser, (err) => {
+      if (err) return next(err);
+      return res.redirect("/");
+    });
   } catch {
     res.render("register", { error: "Registration failed", success: null, email });
   }
